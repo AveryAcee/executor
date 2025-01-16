@@ -12,28 +12,19 @@ git clone https://github.com/AveryAcee/executor-t3rn.git
 cd executor
 ```
 
-### 2. Give Execution Permission
-Before running the script, provide the necessary execution permissions:
-```bash
-chmod +x v29.sh
-```
-
-### 3. Run the Script
+### 2. Run the Script
 Execute the script using the following command:
 ```bash
-./v29.sh
+chmod +x v29.sh && ./v29.sh
 ```
 
-If you want to use **v31**, follow the same steps but replace `v29.sh` with `v31.sh`:
+If you want to use **v31**, follow the same steps but replace `v29.sh` with `v36.sh`:
 
-### 2. Give Execution Permission
-```bash
-chmod +x v31.sh
-```
+
 
 ### 3. Run the Script
 ```bash
-./v31.sh
+chmod +x v36.sh && ./v36.sh
 ```
 
 ## How to Get a Private Key from MetaMask
