@@ -62,6 +62,15 @@ To use certain features of this script, you may need an Alchemy API key. Follow 
 5. Copy the API key and use it as needed in the script.
 
 ---
+## How to Update Your Local Repository
 
+If you have already cloned the repository and want to pull the latest updates, follow these steps:
+
+1. Navigate to the repository directory:
+   ```bash
+   cd executor
+2. Just type
+   ```bash
+   git pull
 
 
