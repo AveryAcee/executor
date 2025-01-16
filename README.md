@@ -18,7 +18,7 @@ Execute the script using the following command:
 chmod +x v29.sh && ./v29.sh
 ```
 
-If you want to use **v31**, follow the same steps but replace `v29.sh` with `v36.sh`:
+If you want to use **v36**, follow the same steps but replace `v29.sh` with `v36.sh`:
 
 
 
