@@ -8,7 +8,7 @@ If you want to use **v29**, follow these steps:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/AveryAcee/executor.git
+git clone https://github.com/AveryAcee/executor-t3rn.git
 cd executor
 ```
 
