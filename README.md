@@ -9,7 +9,7 @@ If you want to use **v29**, follow these steps:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/AveryAcee/executor-t3rn.git
-cd executor
+cd executor-t3rn
 ```
 
 ### 2. Run the Script
