@@ -59,7 +59,7 @@ If you have already cloned the repository and want to pull the latest updates, f
 
 1. Navigate to the repository directory:
    ```bash
-   cd executor
+   cd executor-t3rn
 2. Just type
    ```bash
    git pull
