@@ -35,6 +35,8 @@ export LOG_LEVEL=debug
 export LOG_PRETTY=false
 export EXECUTOR_PROCESS_ORDERS=true
 export EXECUTOR_PROCESS_CLAIMS=true
+export EXECUTOR_ENABLE_BATCH_BIDDING=true
+export EXECUTOR_PROCESS_BIDS_ENABLED=true
 
 # Prompt user for EXECUTOR_MAX_L3_GAS_PRICE
 read -p "Enter the maximum L3 gas price (EXECUTOR_MAX_L3_GAS_PRICE): " EXECUTOR_MAX_L3_GAS_PRICE
