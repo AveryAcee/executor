@@ -43,6 +43,20 @@ export PRIVATE_KEY_LOCAL=$PRIVATE_KEY_LOCAL
 echo -e "\nPrivate key has been set."
 echo
 
+# Prompt user for EXECUTOR_MAX_L3_GAS_PRICE
+read -p "Enter the maximum L3 gas price (EXECUTOR_MAX_L3_GAS_PRICE): " EXECUTOR_MAX_L3_GAS_PRICE
+
+# Check if the user provided a value
+if [ -z "$EXECUTOR_MAX_L3_GAS_PRICE" ]; then
+  echo "No gas price provided. EXECUTOR_MAX_L3_GAS_PRICE will not be set."
+  unset EXECUTOR_MAX_L3_GAS_PRICE
+else
+  export EXECUTOR_MAX_L3_GAS_PRICE=$EXECUTOR_MAX_L3_GAS_PRICE
+  echo "EXECUTOR_MAX_L3_GAS_PRICE set to $EXECUTOR_MAX_L3_GAS_PRICE."
+fi
+
+echo
+
 export ENABLED_NETWORKS='arbitrum-sepolia,base-sepolia,blast-sepolia,optimism-sepolia,l1rn'
 
 # Prompt user for KEY ALCHEMY
