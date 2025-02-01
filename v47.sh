@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "EXECUTOR T3RN"
 
 sleep 1
@@ -8,7 +7,10 @@ cd $HOME
 rm -rf executor
 sleep 1
 sudo apt update
-sudo apt upgrade -y
+sudo apt upgrade
+
+sudo apt-get install figlet
+figlet -f /usr/share/figlet/starwars.flf
 
 EXECUTOR_URL="https://github.com/t3rn/executor-release/releases/download/v0.47.0/executor-linux-v0.47.0.tar.gz"
 EXECUTOR_FILE="executor-linux-v0.47.0.tar.gz"
@@ -36,40 +38,24 @@ export EXECUTOR_PROCESS_PENDING_ORDERS_FROM_API=false
 export EXECUTOR_PROCESS_ORDERS_API_ENABLED=false
 export EXECUTOR_ENABLE_BATCH_BIDING=true
 export EXECUTOR_PROCESS_BIDS_ENABLED=true
+export EXECUTOR_MAX_L3_GAS_PRICE=10000
 
-# Prompt user for PRIVATE_KEY_LOCAL
 read -p "Enter your Private Key from Metamask: " PRIVATE_KEY_LOCAL
 export PRIVATE_KEY_LOCAL=$PRIVATE_KEY_LOCAL
 echo -e "\nPrivate key has been set."
 echo
 
-# Prompt user for EXECUTOR_MAX_L3_GAS_PRICE
-read -p "Enter the maximum L3 gas price (EXECUTOR_MAX_L3_GAS_PRICE): " EXECUTOR_MAX_L3_GAS_PRICE
-
-# Check if the user provided a value
-if [ -z "$EXECUTOR_MAX_L3_GAS_PRICE" ]; then
-  echo "No gas price provided. EXECUTOR_MAX_L3_GAS_PRICE will not be set."
-  unset EXECUTOR_MAX_L3_GAS_PRICE
-else
-  export EXECUTOR_MAX_L3_GAS_PRICE=$EXECUTOR_MAX_L3_GAS_PRICE
-  echo "EXECUTOR_MAX_L3_GAS_PRICE set to $EXECUTOR_MAX_L3_GAS_PRICE."
-fi
-
-echo
-
 export ENABLED_NETWORKS='arbitrum-sepolia,base-sepolia,blast-sepolia,optimism-sepolia,l1rn'
 
-# Prompt user for KEY ALCHEMY
-read -p "Enter your Alchemy API Key (KEY ALCHEMY): " KEYALCHEMY
+read -p "KEY ALCHEMY: " KEYALCHEMY
 
 export RPC_ENDPOINTS_ARBT="https://arb-sepolia.g.alchemy.com/v2/$KEYALCHEMY"
 export RPC_ENDPOINTS_BSSP="https://base-sepolia.g.alchemy.com/v2/$KEYALCHEMY"
 export RPC_ENDPOINTS_BLSS="https://blast-sepolia.g.alchemy.com/v2/$KEYALCHEMY"
 export RPC_ENDPOINTS_OPSP="https://opt-sepolia.g.alchemy.com/v2/$KEYALCHEMY"
-export RPC_ENDPOINTS_L1RN='https://brn.calderarpc.com/'
+export RPC_ENDPOINTS_L1RN='https://brn.rpc.caldera.xyz/'
 
 sleep 2
 echo "Starting the Executor..."
 ./executor
-
 rm -rf t3rn.sh
